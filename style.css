@@ -251,3 +251,94 @@ h2{font-size:clamp(32px,4.2vw,52px);line-height:1.1;font-weight:800;letter-spaci
     font-size: 1.5rem;
   }
 }
+
+/* ===== AJUSTES RESPONSIVOS (MOBILE E TABLET) ===== */
+@media (max-width: 900px) {
+  /* Evita rolagem horizontal indesejada */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Esconde o subtítulo longo do logo no celular para não espremer o menu */
+  .brand small {
+    display: none;
+  }
+
+  /* Empilha todas as grades de 2, 3 ou 4 colunas em 1 coluna */
+  .hero-grid,
+  .stats,
+  .two-col,
+  .compare,
+  .features {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem;
+  }
+
+  /* Ajusta títulos e espaçamentos do topo */
+  .hero {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: 1.85rem;
+    line-height: 1.2;
+  }
+
+  .hero .lead {
+    font-size: 1rem;
+  }
+
+  /* Faz os botões do Hero ocuparem a largura total no celular */
+  .hero .flex-wrap .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Ajusta o mockup do celular (.phone) para não estourar a tela */
+  .phone-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .phone {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Permite rolar os filtros (Todos, Gratuito, Cultura...) horizontalmente se faltar espaço */
+  .chips {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .chips .chip {
+    flex-shrink: 0;
+  }
+
+  /* Ajusta a faixa de idades e o bloco final de CTA */
+  .ages div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .cta {
+    padding: 2rem 1.25rem;
+  }
+
+  .cta h2 {
+    font-size: 1.5rem;
+  }
+}
